@@ -6,6 +6,30 @@ RUN wget http://sourceforge.net/projects/cmusphinx/files/sphinxbase/0.8/sphinxba
 RUN ls
 RUN tar -zxf sphinxbase-0.8.tar.gz && cd sphinxbase-0.8 && ./configure --enable-fixed && make && make install
 
+RUN cd ~ && \
+	wget http://sourceforge.net/projects/cmusphinx/files/pocketsphinx/0.8/pocketsphinx-0.8.tar.gz && \
+	tar -xvf pocketsphinx-0.8.tar.gz && \
+	cd pocketsphinx-0.8 && \
+	./configure && \
+	make && \
+	make install
+
+RUN apt-get install -y subversion autoconf libtool automake gfortran g++
+RUN svn co https://svn.code.sf.net/p/cmusphinx/code/trunk/cmuclmtk/ && \
+	cd cmuclmtk/ && \
+	./autogen.sh && sudo make && sudo make install && \
+	cd ..
+
+RUN echo 'deb http://ftp.debian.org/debian experimental main contrib non-free' > /etc/apt/sources.list.d/experimental.list && \
+	apt-get update && \
+	apt-get -t experimental install phonetisaurus m2m-aligner mitlm openfst
+
+RUN wget http://phonetisaurus.googlecode.com/files/g014b2b.tgz && \
+	tar -xvf g014b2b.tgz && \
+	cd g014b2b/ && \
+	./compile-fst.sh && \
+	cd .. && \
+	mv ~/g014b2b ~/phonetisaurus
 ADD . /app
 
 CMD python /app/main.py
