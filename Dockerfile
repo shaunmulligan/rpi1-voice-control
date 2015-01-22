@@ -4,13 +4,13 @@ FROM resin/rpi-raspbian:wheezy-2015-01-15
 RUN apt-get update && apt-get install -y git-core wget python-dev python-pip bison libasound2-dev libportaudio-dev python-pyaudio
 RUN wget http://downloads.sourceforge.net/project/cmusphinx/sphinxbase/0.8/sphinxbase-0.8.tar.gz && \
 tar -zxvf sphinxbase-0.8.tar.gz && \
-cd ~/sphinxbase-0.8/ && \
+cd /sphinxbase-0.8/ && \
 ./configure --enable-fixed && \
 make && \
 make install && \
 wget http://downloads.sourceforge.net/project/cmusphinx/pocketsphinx/0.8/pocketsphinx-0.8.tar.gz && \
 tar -zxvf pocketsphinx-0.8.tar.gz && \
-cd ~/pocketsphinx-0.8/ && \
+cd /pocketsphinx-0.8/ && \
 ./configure && \
 make && \
 make install
