@@ -19,7 +19,7 @@ make install
 RUN apt-get install -y subversion autoconf libtool automake gfortran g++
 RUN svn co https://svn.code.sf.net/p/cmusphinx/code/trunk/cmuclmtk/ && \
 	cd cmuclmtk/ && \
-	./autogen.sh && sudo make && sudo make install && \
+	./autogen.sh && make && make install && \
 	cd ..
 
 RUN echo 'deb http://ftp.debian.org/debian experimental main contrib non-free' > /etc/apt/sources.list.d/experimental.list && \
