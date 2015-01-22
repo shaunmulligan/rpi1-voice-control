@@ -7,10 +7,11 @@ tar -zxvf sphinxbase-0.8.tar.gz
 RUN cd /sphinxbase-0.8 && \
 ./configure --enable-fixed && \
 make && \
-make install && \
-wget http://downloads.sourceforge.net/project/cmusphinx/pocketsphinx/0.8/pocketsphinx-0.8.tar.gz && \
-tar -zxvf pocketsphinx-0.8.tar.gz 
-RUN cd /pocketsphinx-0.8 && \
+make install
+RUN wget http://downloads.sourceforge.net/project/cmusphinx/pocketsphinx/0.8/pocketsphinx-0.8.tar.gz && \
+tar -zxvf pocketsphinx-0.8.tar.gz && \ 
+ls && \
+cd pocketsphinx-0.8 && \
 ./configure && \
 make && \
 make install
