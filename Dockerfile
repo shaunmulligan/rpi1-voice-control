@@ -29,15 +29,15 @@ RUN wget https://m2m-aligner.googlecode.com/files/m2m-aligner-1.2.tar.gz && \
 
 RUN wget https://mitlm.googlecode.com/files/mitlm-0.4.1.tar.gz && \
 	tar -xvf mitlm-0.4.1.tar.gz
-	cd mitlm-0.4.1/ \&&
-	./configure \&&
+	cd mitlm-0.4.1/ && \
+	./configure && \
 	make install
 
-RUN wget http://distfiles.macports.org/openfst/openfst-1.3.3.tar.gz &&\
-	tar -xvf openfst-1.3.3.tar.gz && \
-	cd openfst-1.3.3/ && \
-	./configure --enable-compact-fsts --enable-const-fsts --enable-far --enable-lookahead-fsts --enable-pdt && \
-	make install
+# RUN wget http://distfiles.macports.org/openfst/openfst-1.3.3.tar.gz &&\
+# 	tar -xvf openfst-1.3.3.tar.gz && \
+# 	cd openfst-1.3.3/ && \
+# 	./configure --enable-compact-fsts --enable-const-fsts --enable-far --enable-lookahead-fsts --enable-pdt && \
+# 	make install
 
 RUN wget https://phonetisaurus.googlecode.com/files/phonetisaurus-0.7.8.tgz && \
 	tar -xvf phonetisaurus-0.7.8.tgz && \
