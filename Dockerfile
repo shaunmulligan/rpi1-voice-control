@@ -28,7 +28,7 @@ RUN wget https://m2m-aligner.googlecode.com/files/m2m-aligner-1.2.tar.gz && \
 	make
 
 RUN wget https://mitlm.googlecode.com/files/mitlm-0.4.1.tar.gz && \
-	tar -xvf mitlm-0.4.1.tar.gz
+	tar -xvf mitlm-0.4.1.tar.gz && \
 	cd mitlm-0.4.1/ && \
 	./configure && \
 	make install
