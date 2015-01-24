@@ -33,6 +33,8 @@ RUN wget https://mitlm.googlecode.com/files/mitlm-0.4.1.tar.gz && \
 	./configure && \
 	make install
 
+RUN cp ~/m2m-aligner-1.2/m2m-aligner /usr/local/bin/m2m-aligner
+
 RUN wget http://distfiles.macports.org/openfst/openfst-1.3.3.tar.gz &&\
 	tar -xvf openfst-1.3.3.tar.gz && \
 	cd openfst-1.3.3/ && \
@@ -45,7 +47,7 @@ RUN wget http://distfiles.macports.org/openfst/openfst-1.3.3.tar.gz &&\
 # 	cd src && \
 # 	make
 
-# RUN cp ~/m2m-aligner-1.2/m2m-aligner /usr/local/bin/m2m-aligner
+
 # RUN cp ~/phonetisaurus-0.7.8/phonetisaurus-g2p /usr/local/bin/phonetisaurus-g2p
 
 # RUN wget http://phonetisaurus.googlecode.com/files/g014b2b.tgz && \
