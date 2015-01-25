@@ -50,12 +50,12 @@ RUN wget https://phonetisaurus.googlecode.com/files/phonetisaurus-0.7.8.tgz && \
 
 RUN cp /phonetisaurus-0.7.8/phonetisaurus-g2p /usr/local/bin/phonetisaurus-g2p
 
-RUN wget http://phonetisaurus.googlecode.com/files/g014b2b.tgz && \
-	tar -xvf g014b2b.tgz && \
-	cd g014b2b/ && \
-	./compile-fst.sh && \
-	cd .. && \
-	mv ~/g014b2b ~/phonetisaurus
+# RUN wget http://phonetisaurus.googlecode.com/files/g014b2b.tgz && \
+# 	tar -xvf g014b2b.tgz && \
+# 	cd g014b2b/ && \
+# 	./compile-fst.sh && \
+# 	cd .. && \
+# 	mv /g014b2b /phonetisaurus
 
 # ADD . /app
 
