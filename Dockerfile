@@ -54,8 +54,8 @@ RUN wget http://phonetisaurus.googlecode.com/files/g014b2b.tgz && \
 	tar -xvf g014b2b.tgz && \
 	cd g014b2b/ && \
 	./compile-fst.sh && \
-	cd .. && \
-	mv /g014b2b /phonetisaurus
+	cd .. && 
+RUN	mv /g014b2b /phonetisaurus
 
 # ADD . /app
 
