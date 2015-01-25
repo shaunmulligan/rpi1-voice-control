@@ -41,22 +41,22 @@ RUN wget http://distfiles.macports.org/openfst/openfst-1.3.3.tar.gz &&\
 	./configure --enable-compact-fsts --enable-const-fsts --enable-far --enable-lookahead-fsts --enable-pdt && \
 	make install
 
-# RUN wget https://phonetisaurus.googlecode.com/files/phonetisaurus-0.7.8.tgz && \
-# 	tar -xvf phonetisaurus-0.7.8.tgz && \
-# 	cd phonetisaurus-0.7.8/ && \
-# 	cd src && \
-# 	make
+RUN wget https://phonetisaurus.googlecode.com/files/phonetisaurus-0.7.8.tgz && \
+	tar -xvf phonetisaurus-0.7.8.tgz && \
+	cd phonetisaurus-0.7.8/ && \
+	cd src && \
+	make
 
 
-# RUN cp /phonetisaurus-0.7.8/phonetisaurus-g2p /usr/local/bin/phonetisaurus-g2p
+RUN cp /phonetisaurus-0.7.8/phonetisaurus-g2p /usr/local/bin/phonetisaurus-g2p
 
-# RUN wget http://phonetisaurus.googlecode.com/files/g014b2b.tgz && \
-# 	tar -xvf g014b2b.tgz && \
-# 	cd g014b2b/ && \
-# 	./compile-fst.sh && \
-# 	cd .. && \
-# 	mv ~/g014b2b ~/phonetisaurus
+RUN wget http://phonetisaurus.googlecode.com/files/g014b2b.tgz && \
+	tar -xvf g014b2b.tgz && \
+	cd g014b2b/ && \
+	./compile-fst.sh && \
+	cd .. && \
+	mv ~/g014b2b ~/phonetisaurus
 
-ADD . /app
+# ADD . /app
 
-CMD python /app/main.py
+# CMD python /app/main.py
