@@ -48,15 +48,17 @@ RUN wget https://phonetisaurus.googlecode.com/files/phonetisaurus-0.7.8.tgz && \
 	make
 
 
- RUN cp /phonetisaurus-0.7.8/phonetisaurus-g2p /usr/local/bin/phonetisaurus-g2p
+RUN cp /phonetisaurus-0.7.8/phonetisaurus-g2p /usr/local/bin/phonetisaurus-g2p
 
-RUN wget http://phonetisaurus.googlecode.com/files/g014b2b.tgz && \
-	tar -xvf g014b2b.tgz && \
-	cd g014b2b/ && \
-	./compile-fst.sh && \
-	cd .. 
-RUN	mv /g014b2b /phonetisaurus
+# RUN wget http://phonetisaurus.googlecode.com/files/g014b2b.tgz && \
+# 	tar -xvf g014b2b.tgz && \
+# 	cd g014b2b/ && \
+# 	./compile-fst.sh && \
+# 	cd .. 
+# RUN	mv /g014b2b /phonetisaurus
 
-# ADD . /app
+RUN apt-get install -y dropbear
 
-# CMD python /app/main.py
+ADD . /app
+
+CMD ["bash", "/app/main.py"] 
