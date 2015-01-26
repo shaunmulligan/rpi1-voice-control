@@ -59,6 +59,6 @@ RUN cp /phonetisaurus-0.7.8/phonetisaurus-g2p /usr/local/bin/phonetisaurus-g2p
 
 RUN apt-get install -y dropbear python python-dev python-pip
 
-ADD . /app
+# ADD . /app
 
-CMD ["bash", "/app/main.py"] 
+# CMD ["bash", "/app/main.py"] 
