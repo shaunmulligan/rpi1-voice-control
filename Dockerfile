@@ -59,6 +59,9 @@ RUN cp /phonetisaurus-0.7.8/phonetisaurus-g2p /usr/local/bin/phonetisaurus-g2p
 
 RUN apt-get install -y dropbear python python-dev python-pip
 
-# ADD . /app
+#all of this above is:
+#registry.resin.io/voicecontrol/4d825b1141ef30d90d96db43fd41bebef0a21301
 
-# CMD ["bash", "/app/main.py"] 
+ADD . /app
+
+CMD ["bash", "/app/start.sh"] 
